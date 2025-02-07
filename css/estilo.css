@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e2e2e2;
+    font-size: 1em;
+}
+
+#area-cabecalho{
+    background-color: #f7b600;
+    padding: 15px;
+    text-align: center;
+
+}
+
+#area-logo, #area-menu{
+    padding: 10px;
+}
+
+#area-principal{
+    width: 920px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+#area-postagens{
+    width: 660px;
+    float: left;
+}
+
+#area-lateral{
+    width: 240px;
+    float: right;
+}
+
+.postagem{
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.conteudo-lateral{
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.categorias{
+    margin-left: 20px;
+}
+
+#area-rodape{
+    clear: both;
+    background-color: #ccc;
+    text-align: center;
+    padding: 15px;
+}
+
+h1 {
+    color: #4e4e4e;
+    font-size: 2.5em;
+}
+
+.branco {
+    color: white;
+}
+
+.data-postagem {
+    border-bottom: 1px solid #dddddd;
+    font-size: 0.8em;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: #c48f00;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#area-cabecalho a:link, #area-cabecalho a:visited {
+    color: #ffffff;
+    padding: 8px 12px;
+}
+
+#area-cabecalho a:hover {
+    color: #f7b600;
+    background: white;
+    text-decoration: none;
+}
+
+.postagem p {
+    color: #242424;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    margin-top: 5px;
+}
+
+.postagem-lateral{
+    margin: 10px;
+}
+
+h2{
+    color: #f7b600;
+}
+
+h3{
+    margin-bottom: 10px;
+    background-color: #e4e4e4;
+    padding: 5px;
+    color: #616161;
+}
