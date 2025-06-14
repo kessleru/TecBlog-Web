@@ -150,16 +150,7 @@ TecBlog-Web/
 - **Mobile Friendly**: 100% responsivo
 - **Acessibilidade**: WCAG 2.1 compatível
 
-## 📈 Possíveis Melhorias
 
-- [ ] Sistema de comentários
-- [ ] Newsletter de inscrição
-- [ ] Compartilhamento social
-- [ ] Sistema de busca avançada
-- [ ] Modo escuro/claro
-- [ ] Sistema de tags
-- [ ] Área administrativa
-- [ ] Sistema de usuários
 
 ## 🎓 Conceitos Demonstrados
 
