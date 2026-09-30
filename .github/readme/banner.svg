@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-label="TecBlog — Layout de blog de tecnologia">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7b600"/>
+      <stop offset="100%" stop-color="#ffd24d"/>
+    </linearGradient>
+    <filter id="sombra" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000000" flood-opacity=".28"/>
+    </filter>
+    <clipPath id="recorte"><rect width="428" height="252" rx="18"/></clipPath>
+  </defs>
+
+  <rect width="1200" height="380" rx="24" fill="url(#bg)"/>
+  <circle cx="1105" cy="60" r="190" fill="#ffffff" opacity="0.22"/>
+  <circle cx="110" cy="360" r="150" fill="#ffffff" opacity="0.17600000000000002"/>
+
+  <text x="72" y="148" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="52" font-weight="800" letter-spacing="-1" fill="#242424">TecBlog</text>
+  <text x="74" y="196" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="24" font-weight="600" fill="#242424">Layout de blog de tecnologia</text>
+  <text x="74" y="232" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="17" fill="rgba(36,36,36,.72)">HTML · CSS · float · largura fixa</text>
+
+  <g font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="14" font-weight="600">
+    <rect x="74" y="262" width="119" height="32" rx="16" fill="rgba(36,36,36,.12)"/>
+    <circle cx="94" cy="278" r="4" fill="#242424"/><text x="106" y="283" fill="#242424">Postagens</text>
+    <rect x="203" y="262" width="152" height="32" rx="16" fill="rgba(36,36,36,.12)"/>
+    <circle cx="223" cy="278" r="4" fill="#242424"/><text x="235" y="283" fill="#242424">Barra lateral</text>
+    <rect x="365" y="262" width="127" height="32" rx="16" fill="rgba(36,36,36,.12)"/>
+    <circle cx="385" cy="278" r="4" fill="#242424"/><text x="397" y="283" fill="#242424">Categorias</text>
+  </g>
+
+  <g transform="translate(700,64)">
+    <rect width="428" height="252" rx="18" fill="#0d1117" filter="url(#sombra)"/>
+    <g clip-path="url(#recorte)">
+    <rect width="428" height="252" rx="18" fill="#0d1117"/>
+    <path d="M0 18a18 18 0 0 1 18-18h392a18 18 0 0 1 18 18v12H0z" fill="#161b22"/>
+    <circle cx="22" cy="16" r="4.5" fill="#ff5f57"/><circle cx="38" cy="16" r="4.5" fill="#febc2e"/><circle cx="54" cy="16" r="4.5" fill="#28c840"/>
+    <text x="241" y="20" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace,'Noto Color Emoji','Apple Color Emoji','Segoe UI Emoji'" font-size="11" fill="#7d8590">css/estilo.css</text>
+    <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace,'Noto Color Emoji','Apple Color Emoji','Segoe UI Emoji'" font-size="13" fill="#c9d1d9">
+    <text x="20" y="57.4" xml:space="preserve"><tspan fill="#f2cc60">#area-principal</tspan><tspan> {</tspan></text>
+    <text x="20" y="75.22" xml:space="preserve"><tspan>  </tspan><tspan fill="#d2a8ff">width</tspan><tspan>: </tspan><tspan fill="#a5d6ff">920px</tspan><tspan>;</tspan></text>
+    <text x="20" y="93.03999999999999" xml:space="preserve"><tspan>  </tspan><tspan fill="#d2a8ff">margin</tspan><tspan>: </tspan><tspan fill="#a5d6ff">0 auto</tspan><tspan>;</tspan></text>
+    <text x="20" y="110.86" xml:space="preserve"><tspan>}</tspan></text>
+    <text x="20" y="128.68" xml:space="preserve"><tspan fill="#f2cc60">#area-postagens</tspan><tspan> {</tspan></text>
+    <text x="20" y="146.5" xml:space="preserve"><tspan>  </tspan><tspan fill="#d2a8ff">width</tspan><tspan>: </tspan><tspan fill="#a5d6ff">660px</tspan><tspan>; </tspan><tspan fill="#d2a8ff">float</tspan><tspan>: </tspan><tspan fill="#a5d6ff">left</tspan><tspan>;</tspan></text>
+    <text x="20" y="164.32" xml:space="preserve"><tspan>}</tspan></text>
+    <text x="20" y="182.14000000000001" xml:space="preserve"><tspan fill="#f2cc60">#area-lateral</tspan><tspan> {</tspan></text>
+    <text x="20" y="199.96" xml:space="preserve"><tspan>  </tspan><tspan fill="#d2a8ff">width</tspan><tspan>: </tspan><tspan fill="#a5d6ff">240px</tspan><tspan>; </tspan><tspan fill="#d2a8ff">float</tspan><tspan>: </tspan><tspan fill="#a5d6ff">right</tspan><tspan>;</tspan></text>
+    <text x="20" y="217.78" xml:space="preserve"><tspan>}</tspan></text>
+    <text x="20" y="235.6" xml:space="preserve"><tspan fill="#f2cc60">#area-rodape</tspan><tspan> { </tspan><tspan fill="#d2a8ff">clear</tspan><tspan>: </tspan><tspan fill="#a5d6ff">both</tspan><tspan>; }</tspan></text>
+    </g>
+    </g>
+  </g>
+</svg>

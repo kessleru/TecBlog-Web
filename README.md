@@ -1,187 +1,87 @@
-# 💻 TecBlog - Blog de Tecnologia
+<div align="center">
 
-Um blog moderno e responsivo dedicado a tecnologia, desenvolvido com HTML5 e CSS3, apresentando as últimas novidades em jogos, celulares, informática e eletrônicos.
+<img src=".github/readme/banner.svg" alt="TecBlog — layout de blog de tecnologia em HTML e CSS" width="100%">
 
-## 📋 Descrição
+**Página inicial de um blog de tecnologia em HTML e CSS: cabeçalho com menu, postagens e barra lateral, em layout de float.**
 
-O **TecBlog** é um website completo de blog focado em tecnologia, oferecendo conteúdo atualizado sobre as últimas tendências do mundo tech. O projeto apresenta um design limpo e profissional, com navegação intuitiva e organização por categorias.
+[![Demo](https://img.shields.io/badge/demo-ao%20vivo-f7b600?style=for-the-badge&logo=githubpages&logoColor=white)](https://kessleru.github.io/TecBlog-Web/)
+[![Licença MIT](https://img.shields.io/github/license/kessleru/TecBlog-Web?style=for-the-badge&color=c48f00)](LICENSE)
+[![Último commit](https://img.shields.io/github/last-commit/kessleru/TecBlog-Web?style=for-the-badge&color=4e4e4e)](https://github.com/kessleru/TecBlog-Web/commits/main)
 
-## ✨ Características
+<img src=".github/readme/desktop.jpg" alt="Página inicial do TecBlog: cabeçalho amarelo com menu, postagem com foto e barra lateral com postagens recentes e categorias" width="100%">
 
-- **Layout Responsivo**: Adaptável a todos os dispositivos
-- **Design Moderno**: Interface limpa e profissional
-- **Categorização**: Conteúdo organizado por temas
-- **Navegação Intuitiva**: Menu de categorias bem estruturado
-- **Sistema de Posts**: Estrutura completa para artigos
-- **SEO Friendly**: Otimizado para mecanismos de busca
-
-## 🛠️ Tecnologias Utilizadas
-
-- **HTML5**: Estrutura semântica moderna
-- **CSS3**: Estilização avançada e layout responsivo
-- **Design Responsivo**: Mobile-first approach
-- **Tipografia Web**: Fontes otimizadas para leitura
-
-## 📁 Estrutura do Projeto
-
-```
-TecBlog-Web/
-├── index.html          # Página principal do blog
-├── LICENSE             # Licença do projeto
-├── README.md           # Documentação
-├── css/                # Arquivos de estilo
-│   └── estilo.css      # Estilos principais
-└── imagens/            # Recursos visuais
-    ├── imagem1.jpg     # Imagens dos posts
-    ├── imagem2.jpg
-    ├── imagem3.jpg
-    ├── imagem4.jpg
-    └── imagem5.jpg
-```
-
-## 📱 Categorias do Blog
-
-### 🎮 **Jogos**
-- Reviews de games
-- Lançamentos e novidades
-- Análises de gameplay
-- Tendências do mercado gaming
-
-### 📱 **Celulares**
-- Reviews de smartphones
-- Comparativos de modelos
-- Dicas de uso e configuração
-- Novidades do mercado mobile
-
-### 💻 **Informática**
-- Hardware e componentes
-- Software e aplicativos
-- Tutoriais técnicos
-- Dicas de produtividade
-
-### 🔌 **Eletrônicos**
-- Gadgets e dispositivos
-- Reviews de produtos
-- Tecnologias emergentes
-- Inovações do mercado
-
-## 🎨 Design e Layout
-
-### Características Visuais:
-- **Cabeçalho Destacado**: Logo do TecBlog com cores contrastantes
-- **Menu Horizontal**: Navegação por categorias
-- **Layout de 2 Colunas**: Conteúdo principal e sidebar
-- **Cards de Posts**: Estrutura visual para artigos
-- **Tipografia Legível**: Fonte otimizada para leitura
-
-### Paleta de Cores:
-- **Primária**: Azul tecnológico
-- **Secundária**: Cinza moderno
-- **Destaque**: Laranja vibrante
-- **Texto**: Preto e cinza escuro
-
-## 📝 Estrutura dos Posts
-
-### Elementos de um Post:
-```html
-<div class="postagem">
-    <h2>Título da Postagem</h2>
-    <span class="data-postagem">Data de publicação</span>
-    <img src="imagem.jpg" alt="Descrição">
-    <p>Conteúdo do post...</p>
-    <a href="#">Leia mais</a>
 </div>
-```
 
-### Informações Incluídas:
-- **Título**: Chamativo e descritivo
-- **Data**: Timestamp da publicação
-- **Imagem**: Visual representativo
-- **Resumo**: Prévia do conteúdo
-- **Link**: "Leia mais" para post completo
+## Sobre
 
-## 🚀 Como Visualizar
+Um dos primeiros estudos de layout: a página inicial de um blog com três postagens, uma barra
+lateral de **postagens recentes** e **categorias**, e rodapé. Os textos são *lorem ipsum* — o que
+importa aqui é a estrutura.
 
-1. **Clone o repositório**:
-   ```bash
-   git clone [url-do-repositorio]
-   ```
+O layout é o clássico de antes do Flexbox e do Grid: um container de **920px** centralizado, a
+coluna de postagens flutuando à esquerda, a barra lateral à direita, e o rodapé com `clear: both`
+para voltar ao fluxo normal.
 
-2. **Navegue até o diretório**:
-   ```bash
-   cd TecBlog-Web
-   ```
-
-3. **Abra o arquivo principal**:
-   - Clique duas vezes em `index.html` ou
-   - Use um servidor local: `python -m http.server`
-   - VS Code: Use a extensão Live Server
-
-## 🎯 Funcionalidades
-
-### Navegação:
-- **Menu Principal**: Links para todas as categorias
-- **Logo Clicável**: Retorno à página inicial
-- **Breadcrumbs**: Navegação contextual
-
-### Conteúdo:
-- **Posts Destacados**: Artigos principais em destaque
-- **Sidebar**: Conteúdo complementar e widgets
-- **Paginação**: Navegação entre páginas de posts
-- **Busca**: Sistema de pesquisa interno
-
-### Responsividade:
-- **Desktop**: Layout completo com sidebar
-- **Tablet**: Adaptação do menu e layout
-- **Mobile**: Layout simplificado e otimizado
-
-## 📊 SEO e Performance
-
-### Otimizações Implementadas:
-- **Meta Tags**: Título e descrição otimizados
-- **Estrutura Semântica**: HTML5 semântico
-- **Alt Text**: Todas as imagens com descrição
-- **Loading**: Otimização de carregamento
-- **Compressão**: Imagens otimizadas
-
-### Métricas de Performance:
-- **Lighthouse Score**: 90+ em todas as categorias
-- **Page Speed**: Carregamento otimizado
-- **Mobile Friendly**: 100% responsivo
-- **Acessibilidade**: WCAG 2.1 compatível
-
-
-
-## 🎓 Conceitos Demonstrados
-
-- **Layout Responsivo**: Design que se adapta a diferentes telas
-- **CSS Grid/Flexbox**: Técnicas modernas de layout
-- **Tipografia Web**: Hierarquia e legibilidade
-- **UX Design**: Experiência do usuário otimizada
-- **Content Strategy**: Organização de conteúdo
-- **Web Standards**: Seguimento de padrões web
-
-## 🔧 Customização
-
-### Modificar Cores:
 ```css
-:root {
-    --cor-primaria: #2c3e50;
-    --cor-secundaria: #3498db;
-    --cor-destaque: #e74c3c;
-}
+#area-principal { width: 920px; margin: 0 auto; }
+#area-postagens { width: 660px; float: left; }
+#area-lateral   { width: 240px; float: right; }
+#area-rodape    { clear: both; }
 ```
 
-### Adicionar Nova Categoria:
-1. Adicione link no menu de navegação
-2. Crie página específica da categoria
-3. Atualize o CSS se necessário
-4. Adicione posts relacionados
+## O que tem e o que não tem
 
-## 📄 Licença
+| | |
+|---|---|
+| ✅ **Cabeçalho** | Logo em duas cores e menu com Home, Jogos, Celulares, Informática e Eletrônicos |
+| ✅ **Postagens** | Título, data, imagem, resumo e link "Leia mais..." |
+| ✅ **Barra lateral** | Postagens recentes e lista de categorias |
+| ⚠️ **Só a página inicial** | Os links do menu apontam para páginas (`jogos.html`, …) que ainda não existem |
+| ⚠️ **Largura fixa** | Sem media queries: em telas mais estreitas que 920px o layout não se adapta |
 
-Este projeto está licenciado sob os termos especificados no arquivo LICENSE.
+## Stack
+
+| Camada | Ferramenta |
+|---|---|
+| Marcação | HTML5 |
+| Estilo | CSS3 — `float`, `clear`, largura fixa |
+| Deploy | [GitHub Pages](https://pages.github.com) |
+
+## Rodando localmente
+
+```bash
+git clone https://github.com/kessleru/TecBlog-Web.git
+cd TecBlog-Web
+python -m http.server 8000
+```
+
+Abra `http://localhost:8000`. Não há dependências nem build — abrir o `index.html` direto no
+navegador também funciona.
+
+## Estrutura
+
+```
+├── index.html
+├── css/
+│   └── estilo.css
+└── imagens/          # fotos das postagens
+```
+
+<details>
+<summary><b>Regerando as imagens deste README</b></summary>
+
+```bash
+node .github/readme/gerar.mjs                 # banner.svg
+
+python -m http.server 8000                    # em outro terminal
+npm i --no-save puppeteer-core sharp
+node .github/readme/capturar.mjs              # tela em 2x
+```
+
+</details>
 
 ---
 
-*Desenvolvido para demonstrar criação de blogs modernos e responsivos* 📰
+<div align="center">
+<sub>Feito por <a href="https://github.com/kessleru">Otávio Kessler Ustra</a> · <a href="LICENSE">MIT</a></sub>
+</div>
