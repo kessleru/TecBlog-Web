@@ -8,11 +8,46 @@
       <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000000" flood-opacity=".28"/>
     </filter>
     <clipPath id="recorte"><rect width="428" height="252" rx="18"/></clipPath>
+    <clipPath id="moldura"><rect width="1200" height="380" rx="24"/></clipPath><clipPath id="pagina"><rect width="420" height="300" rx="12"/></clipPath>
   </defs>
 
   <rect width="1200" height="380" rx="24" fill="url(#bg)"/>
   <circle cx="1105" cy="60" r="190" fill="#ffffff" opacity="0.22"/>
   <circle cx="110" cy="360" r="150" fill="#ffffff" opacity="0.17600000000000002"/>
+  <g clip-path="url(#moldura)">
+  <g transform="translate(724,40) rotate(2 210 150)" filter="url(#sombra)">
+    <g clip-path="url(#pagina)">
+      <rect width="420" height="300" fill="#e2e2e2"/>
+      <rect width="420" height="50" fill="#f7b600"/>
+      <text x="210" y="26" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#4e4e4e">Tec<tspan fill="#ffffff">Blog</tspan></text>
+      <g font-family="Arial,sans-serif" font-size="9" fill="#ffffff" text-anchor="middle">
+        <text x="120" y="43">Home</text><text x="160" y="43">Jogos</text><text x="206" y="43">Celulares</text><text x="258" y="43">Informática</text><text x="314" y="43">Eletrônicos</text>
+      </g>
+      
+      <rect x="16" y="62" width="276" height="112" fill="#ffffff"/>
+      <rect x="28" y="74" width="140" height="10" rx="2" fill="#f7b600"/>
+      <rect x="28" y="90" width="70" height="5" rx="2" fill="#bdbdbd"/>
+      <rect x="28" y="102" width="252" height="48" fill="#6b4a32"/>
+      <circle cx="232" cy="126" r="15" fill="#e8612c"/>
+      <rect x="44" y="114" width="90" height="24" rx="3" fill="#8a9aa6"/>
+      <rect x="28" y="158" width="200" height="5" rx="2" fill="#cfcfcf"/>
+      
+      <rect x="16" y="186" width="276" height="112" fill="#ffffff"/>
+      <rect x="28" y="198" width="140" height="10" rx="2" fill="#f7b600"/>
+      <rect x="28" y="214" width="70" height="5" rx="2" fill="#bdbdbd"/>
+      <rect x="28" y="226" width="252" height="48" fill="#3f4a55"/>
+      <circle cx="232" cy="250" r="15" fill="#c9d3dc"/>
+      <rect x="44" y="238" width="90" height="24" rx="3" fill="#dfe6ec"/>
+      <rect x="28" y="282" width="200" height="5" rx="2" fill="#cfcfcf"/>
+      <rect x="304" y="62" width="100" height="92" fill="#ffffff"/>
+      <rect x="312" y="70" width="84" height="12" fill="#e4e4e4"/>
+      <rect x="316" y="92" width="72" height="5" rx="2" fill="#cfcfcf"/><rect x="316" y="104" width="56" height="5" rx="2" fill="#cfcfcf"/><rect x="316" y="116" width="72" height="5" rx="2" fill="#cfcfcf"/><rect x="316" y="128" width="56" height="5" rx="2" fill="#cfcfcf"/><rect x="316" y="140" width="72" height="5" rx="2" fill="#cfcfcf"/>
+      <rect x="304" y="164" width="100" height="70" fill="#ffffff"/>
+      <rect x="312" y="172" width="84" height="12" fill="#e4e4e4"/>
+      <circle cx="318" cy="196" r="2" fill="#242424"/><rect x="324" y="194" width="46" height="5" rx="2" fill="#c48f00"/><circle cx="318" cy="208" r="2" fill="#242424"/><rect x="324" y="206" width="46" height="5" rx="2" fill="#c48f00"/><circle cx="318" cy="220" r="2" fill="#242424"/><rect x="324" y="218" width="46" height="5" rx="2" fill="#c48f00"/>
+    </g>
+  </g>
+  </g>
 
   <text x="72" y="148" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="52" font-weight="800" letter-spacing="-1" fill="#242424">TecBlog</text>
   <text x="74" y="196" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="24" font-weight="600" fill="#242424">Layout de blog de tecnologia</text>
@@ -27,26 +62,5 @@
     <circle cx="385" cy="278" r="4" fill="#242424"/><text x="397" y="283" fill="#242424">Categorias</text>
   </g>
 
-  <g transform="translate(700,64)">
-    <rect width="428" height="252" rx="18" fill="#0d1117" filter="url(#sombra)"/>
-    <g clip-path="url(#recorte)">
-    <rect width="428" height="252" rx="18" fill="#0d1117"/>
-    <path d="M0 18a18 18 0 0 1 18-18h392a18 18 0 0 1 18 18v12H0z" fill="#161b22"/>
-    <circle cx="22" cy="16" r="4.5" fill="#ff5f57"/><circle cx="38" cy="16" r="4.5" fill="#febc2e"/><circle cx="54" cy="16" r="4.5" fill="#28c840"/>
-    <text x="241" y="20" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace,'Noto Color Emoji','Apple Color Emoji','Segoe UI Emoji'" font-size="11" fill="#7d8590">css/estilo.css</text>
-    <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace,'Noto Color Emoji','Apple Color Emoji','Segoe UI Emoji'" font-size="13" fill="#c9d1d9">
-    <text x="20" y="57.4" xml:space="preserve"><tspan fill="#f2cc60">#area-principal</tspan><tspan> {</tspan></text>
-    <text x="20" y="75.22" xml:space="preserve"><tspan>  </tspan><tspan fill="#d2a8ff">width</tspan><tspan>: </tspan><tspan fill="#a5d6ff">920px</tspan><tspan>;</tspan></text>
-    <text x="20" y="93.03999999999999" xml:space="preserve"><tspan>  </tspan><tspan fill="#d2a8ff">margin</tspan><tspan>: </tspan><tspan fill="#a5d6ff">0 auto</tspan><tspan>;</tspan></text>
-    <text x="20" y="110.86" xml:space="preserve"><tspan>}</tspan></text>
-    <text x="20" y="128.68" xml:space="preserve"><tspan fill="#f2cc60">#area-postagens</tspan><tspan> {</tspan></text>
-    <text x="20" y="146.5" xml:space="preserve"><tspan>  </tspan><tspan fill="#d2a8ff">width</tspan><tspan>: </tspan><tspan fill="#a5d6ff">660px</tspan><tspan>; </tspan><tspan fill="#d2a8ff">float</tspan><tspan>: </tspan><tspan fill="#a5d6ff">left</tspan><tspan>;</tspan></text>
-    <text x="20" y="164.32" xml:space="preserve"><tspan>}</tspan></text>
-    <text x="20" y="182.14000000000001" xml:space="preserve"><tspan fill="#f2cc60">#area-lateral</tspan><tspan> {</tspan></text>
-    <text x="20" y="199.96" xml:space="preserve"><tspan>  </tspan><tspan fill="#d2a8ff">width</tspan><tspan>: </tspan><tspan fill="#a5d6ff">240px</tspan><tspan>; </tspan><tspan fill="#d2a8ff">float</tspan><tspan>: </tspan><tspan fill="#a5d6ff">right</tspan><tspan>;</tspan></text>
-    <text x="20" y="217.78" xml:space="preserve"><tspan>}</tspan></text>
-    <text x="20" y="235.6" xml:space="preserve"><tspan fill="#f2cc60">#area-rodape</tspan><tspan> { </tspan><tspan fill="#d2a8ff">clear</tspan><tspan>: </tspan><tspan fill="#a5d6ff">both</tspan><tspan>; }</tspan></text>
-    </g>
-    </g>
-  </g>
+
 </svg>

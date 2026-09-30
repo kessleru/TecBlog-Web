@@ -6,7 +6,7 @@
  * Sem dependências. Todo texto de terminal nas cenas lá embaixo é cópia de uma
  * execução real — se a saída mudar, cole a nova e rode de novo.
  */
-import { writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const SAIDA = import.meta.dirname;
@@ -130,7 +130,7 @@ ${linhasSvg(linhas, { x: 20, y0: +(44 + alturaLinha * 0.75).toFixed(1), alturaLi
     </g>`;
 }
 
-function banner({ arquivo, titulo, tagline, stack, pills = [], cores, card, rotulo }) {
+function banner({ arquivo, titulo, tagline, stack, pills = [], cores, card, arte = '', defs = '', circulos = true, rotulo }) {
   const { de, ate, texto = '#ffffff', suave = 'rgba(255,255,255,.78)', circulo = '#ffffff', circuloOpacidade = 0.08 } = cores;
   const tamanhoTitulo = titulo.length > 16 ? 44 : 52;
 
@@ -163,11 +163,14 @@ function banner({ arquivo, titulo, tagline, stack, pills = [], cores, card, rotu
       <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000000" flood-opacity=".28"/>
     </filter>
     <clipPath id="recorte"><rect width="428" height="252" rx="18"/></clipPath>
+    <clipPath id="moldura"><rect width="1200" height="380" rx="24"/></clipPath>${defs}
   </defs>
 
   <rect width="1200" height="380" rx="24" fill="url(#bg)"/>
-  <circle cx="1105" cy="60" r="190" fill="${circulo}" opacity="${circuloOpacidade}"/>
-  <circle cx="110" cy="360" r="150" fill="${circulo}" opacity="${circuloOpacidade * 0.8}"/>
+${circulos ? `  <circle cx="1105" cy="60" r="190" fill="${circulo}" opacity="${circuloOpacidade}"/>
+  <circle cx="110" cy="360" r="150" fill="${circulo}" opacity="${circuloOpacidade * 0.8}"/>` : ''}
+  <g clip-path="url(#moldura)">${arte}
+  </g>
 
   <text x="72" y="148" font-family="${FONTE_UI}" font-size="${tamanhoTitulo}" font-weight="800" letter-spacing="-1" fill="${texto}">${escapar(titulo)}</text>
   <text x="74" y="196" font-family="${FONTE_UI}" font-size="24" font-weight="600" fill="${texto}">${escapar(tagline)}</text>
@@ -177,15 +180,38 @@ function banner({ arquivo, titulo, tagline, stack, pills = [], cores, card, rotu
     ${pillsSvg}
   </g>
 
-  <g transform="translate(700,64)">
+${card ? `  <g transform="translate(700,64)">
     <rect width="428" height="252" rx="18" fill="${card.fundo ?? '#ffffff'}" filter="url(#sombra)"/>
     <g clip-path="url(#recorte)">${card.conteudo}
     </g>
-  </g>
+  </g>` : ''}
 </svg>
 `;
   writeFileSync(join(SAIDA, arquivo), svg);
   console.log(`✓ ${arquivo}  (1200×380)`);
+}
+
+/**
+ * Embute um SVG do próprio repositório (logo, ícone) dentro do banner, na
+ * caixa x/y/largura/altura. Ids ganham prefixo para não colidirem entre si.
+ * `trocar` substitui cores literais (ex.: { white: '#1a1a1a' }).
+ */
+function svgArquivo(caminho, { x, y, largura, altura, trocar = {}, extra = '' }) {
+  let bruto = readFileSync(join(SAIDA, '..', '..', caminho), 'utf8')
+    .replace(/<\?xml[^>]*>/g, '')
+    .replace(/<!--[\s\S]*?-->/g, '');
+  const raiz = bruto.match(/<svg[ >][^>]*>/)[0];
+  const viewBox =
+    (raiz.match(/viewBox="([^"]+)"/) ?? [])[1] ??
+    `0 0 ${parseFloat(raiz.match(/width="([^"]+)"/)[1])} ${parseFloat(raiz.match(/height="([^"]+)"/)[1])}`;
+  const prefixo = caminho.replace(/[^a-z0-9]/gi, '');
+  let miolo = bruto.slice(bruto.indexOf(raiz) + raiz.length, bruto.lastIndexOf('</svg>'));
+  miolo = miolo
+    .replace(/id="([^"]+)"/g, `id="${prefixo}-$1"`)
+    .replace(/url\(#([^)]+)\)/g, `url(#${prefixo}-$1)`)
+    .replace(/href="#([^"]+)"/g, `href="#${prefixo}-$1"`);
+  for (const [de, para] of Object.entries(trocar)) miolo = miolo.split(`"${de}"`).join(`"${para}"`);
+  return `<svg x="${x}" y="${y}" width="${largura}" height="${altura}" viewBox="${viewBox}" ${extra}>${miolo.trim()}</svg>`;
 }
 
 // Atalhos ANSI para escrever as cenas
@@ -202,8 +228,17 @@ const _ = '\x1b[0m';
 // ---------------------------------------------------------------------
 // Cenas
 // ---------------------------------------------------------------------
-// Card: o layout inteiro são duas colunas de largura fixa com float (css/estilo.css).
+// Arte: a página em planta — cabeçalho amarelo, postagens em float à esquerda,
+// barra lateral à direita — nas cores do css/estilo.css.
 const escuro = { fundo: 'rgba(36,36,36,.12)', cor: '#242424' };
+const post = (y, sol) => `
+      <rect x="16" y="${y}" width="276" height="112" fill="#ffffff"/>
+      <rect x="28" y="${y + 12}" width="140" height="10" rx="2" fill="#f7b600"/>
+      <rect x="28" y="${y + 28}" width="70" height="5" rx="2" fill="#bdbdbd"/>
+      <rect x="28" y="${y + 40}" width="252" height="48" fill="${sol ? '#6b4a32' : '#3f4a55'}"/>
+      <circle cx="232" cy="${y + 64}" r="15" fill="${sol ? '#e8612c' : '#c9d3dc'}"/>
+      <rect x="44" y="${y + 52}" width="90" height="24" rx="3" fill="${sol ? '#8a9aa6' : '#dfe6ec'}"/>
+      <rect x="28" y="${y + 96}" width="200" height="5" rx="2" fill="#cfcfcf"/>`;
 
 banner({
   arquivo: 'banner.svg',
@@ -216,23 +251,24 @@ banner({
     { texto: 'Barra lateral', ...escuro },
     { texto: 'Categorias', ...escuro },
   ],
-  card: {
-    fundo: '#0d1117',
-    conteudo: cardTerminal({
-      titulo: 'css/estilo.css',
-      linhas: [
-        `${am}#area-principal${_} {`,
-        `  ${mg}width${_}: ${c}920px${_};`,
-        `  ${mg}margin${_}: ${c}0 auto${_};`,
-        `}`,
-        `${am}#area-postagens${_} {`,
-        `  ${mg}width${_}: ${c}660px${_}; ${mg}float${_}: ${c}left${_};`,
-        `}`,
-        `${am}#area-lateral${_} {`,
-        `  ${mg}width${_}: ${c}240px${_}; ${mg}float${_}: ${c}right${_};`,
-        `}`,
-        `${am}#area-rodape${_} { ${mg}clear${_}: ${c}both${_}; }`,
-      ],
-    }),
-  },
+  defs: `<clipPath id="pagina"><rect width="420" height="300" rx="12"/></clipPath>`,
+  arte: `
+  <g transform="translate(724,40) rotate(2 210 150)" filter="url(#sombra)">
+    <g clip-path="url(#pagina)">
+      <rect width="420" height="300" fill="#e2e2e2"/>
+      <rect width="420" height="50" fill="#f7b600"/>
+      <text x="210" y="26" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#4e4e4e">Tec<tspan fill="#ffffff">Blog</tspan></text>
+      <g font-family="Arial,sans-serif" font-size="9" fill="#ffffff" text-anchor="middle">
+        <text x="120" y="43">Home</text><text x="160" y="43">Jogos</text><text x="206" y="43">Celulares</text><text x="258" y="43">Informática</text><text x="314" y="43">Eletrônicos</text>
+      </g>
+      ${post(62, true)}
+      ${post(186, false)}
+      <rect x="304" y="62" width="100" height="92" fill="#ffffff"/>
+      <rect x="312" y="70" width="84" height="12" fill="#e4e4e4"/>
+      ${[92, 104, 116, 128, 140].map((y, i) => `<rect x="316" y="${y}" width="${i % 2 ? 56 : 72}" height="5" rx="2" fill="#cfcfcf"/>`).join('')}
+      <rect x="304" y="164" width="100" height="70" fill="#ffffff"/>
+      <rect x="312" y="172" width="84" height="12" fill="#e4e4e4"/>
+      ${[194, 206, 218].map((y) => `<circle cx="318" cy="${y + 2}" r="2" fill="#242424"/><rect x="324" y="${y}" width="46" height="5" rx="2" fill="#c48f00"/>`).join('')}
+    </g>
+  </g>`,
 });
